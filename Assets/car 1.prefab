@@ -73,13 +73,48 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6652725513331149018, guid: 4596ffbd8c419b244988282f8598d22f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -822280889009748460, guid: 4596ffbd8c419b244988282f8598d22f,
+        type: 3}
     - target: {fileID: 919132149155446097, guid: 4596ffbd8c419b244988282f8598d22f,
         type: 3}
       propertyPath: m_Name
       value: car 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3121197614391378570, guid: 4596ffbd8c419b244988282f8598d22f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -822280889009748460, guid: 4596ffbd8c419b244988282f8598d22f,
+        type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4596ffbd8c419b244988282f8598d22f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6127984927550750396}
   m_SourcePrefab: {fileID: 100100000, guid: 4596ffbd8c419b244988282f8598d22f, type: 3}
+--- !u!1 &7024496498208777849 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4596ffbd8c419b244988282f8598d22f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7907599154425666344}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6127984927550750396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7024496498208777849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbd8728c75a128b4bb850f405568fb9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorMaterial: {fileID: 2100000, guid: 111dbf2836803bb4ab616a9e646c96d4, type: 2}

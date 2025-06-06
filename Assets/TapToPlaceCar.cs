@@ -2,15 +2,17 @@
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using UnityEngine.EventSystems;
 
 public class TapToPlaceCar : MonoBehaviour
 {
-    public GameObject[] carPrefabs; // Assign Car 1 and Car 2 in Inspector
+    public GameObject[] carPrefabs;
+    public static GameObject activeCar1;
+    public static GameObject activeCar2;
     private int currentCarIndex = 0;
-    private GameObject placedCar; // Keeps track of the current car
 
     private ARRaycastManager raycastManager;
-    private static List<ARRaycastHit> hits = new List<ARRaycastHit>();
+    static List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
     void Awake()
     {
@@ -19,7 +21,7 @@ public class TapToPlaceCar : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             Vector2 screenPos = Input.mousePosition;
 
@@ -27,33 +29,28 @@ public class TapToPlaceCar : MonoBehaviour
             {
                 Pose hitPose = hits[0].pose;
 
-                // Remove previously placed car
-                if (placedCar != null)
+                if (currentCarIndex == 0)
                 {
-                    Destroy(placedCar);
+                    if (activeCar1 != null)
+                        Destroy(activeCar1);
+
+                    activeCar1 = Instantiate(carPrefabs[0], hitPose.position, Quaternion.identity);
+                    activeCar1.transform.localScale = Vector3.one * 0.2f;
+                    Debug.Log("✅ Car 1 placed at: " + hitPose.position);
                 }
+                else if (currentCarIndex == 1)
+                {
+                    if (activeCar2 != null)
+                        Destroy(activeCar2);
 
-                // Instantiate the selected car prefab at plane position with no rotation
-                placedCar = Instantiate(carPrefabs[currentCarIndex], hitPose.position, Quaternion.identity);
-
-                // Apply fixed rotation: keep upright (Y-up) and match plane's Y angle
-                placedCar.transform.rotation = Quaternion.Euler(0f, hitPose.rotation.eulerAngles.y, 0f);
-
-                // Apply consistent scale
-                placedCar.transform.localScale = Vector3.one * 0.2f; // adjust this scale to fit your real size
+                    activeCar2 = Instantiate(carPrefabs[1], hitPose.position, Quaternion.identity);
+                    activeCar2.transform.localScale = Vector3.one * 0.2f;
+                    Debug.Log("✅ Car 2 placed at: " + hitPose.position);
+                }
             }
         }
     }
 
-    // UI Button → Car 1
-    public void SelectCar0()
-    {
-        currentCarIndex = 0;
-    }
-
-    // UI Button → Car 2
-    public void SelectCar1()
-    {
-        currentCarIndex = 1;
-    }
+    public void SelectCar0() { currentCarIndex = 0; }
+    public void SelectCar1() { currentCarIndex = 1; }
 }
