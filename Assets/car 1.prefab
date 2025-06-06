@@ -98,6 +98,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6127984927550750396}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4596ffbd8c419b244988282f8598d22f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8846418500906576073}
   m_SourcePrefab: {fileID: 100100000, guid: 4596ffbd8c419b244988282f8598d22f, type: 3}
 --- !u!1 &7024496498208777849 stripped
 GameObject:
@@ -118,3 +122,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorMaterial: {fileID: 2100000, guid: 111dbf2836803bb4ab616a9e646c96d4, type: 2}
+--- !u!114 &8846418500906576073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7024496498208777849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b825571edbd122469d495ad5d62a8c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheels:
+  - {fileID: 7043689660373396675, guid: 4596ffbd8c419b244988282f8598d22f, type: 3}
+  - {fileID: 8887807148435563672, guid: 4596ffbd8c419b244988282f8598d22f, type: 3}
+  - {fileID: -273084051463943827, guid: 4596ffbd8c419b244988282f8598d22f, type: 3}
+  - {fileID: 439369808879467449, guid: 4596ffbd8c419b244988282f8598d22f, type: 3}
+  newWheelMaterial: {fileID: 2100000, guid: e3cc2aee9f643654392cc1ebcfbdc112, type: 2}
