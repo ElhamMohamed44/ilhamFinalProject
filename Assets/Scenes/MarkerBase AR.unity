@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 407874109}
   - component: {fileID: 407874108}
   - component: {fileID: 407874107}
+  - component: {fileID: 407874111}
   m_Layer: 0
   m_Name: XR Origin (XR Rig)
   m_TagString: Untagged
@@ -153,8 +154,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dea56a9eaadd1c439095de4f9a371cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SerializedLibrary: {fileID: 0}
-  m_MaxNumberOfMovingImages: 0
+  m_SerializedLibrary: {fileID: 11400000, guid: b9c6b53f88c538248a37ef1085d39c74,
+    type: 2}
+  m_MaxNumberOfMovingImages: 2
   m_TrackedImagePrefab: {fileID: 0}
 --- !u!114 &407874108
 MonoBehaviour:
@@ -202,6 +204,22 @@ Transform:
   - {fileID: 444638294}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &407874111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407874106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19a1c263ddb5b1e49ba59c93b3888eff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  car1Prefab: {fileID: 3007055084074726083, guid: c43158e36bd98434c975326aa4ef6cae,
+    type: 3}
+  car2Prefab: {fileID: 6513358127731072105, guid: 324b4a656056534478c95b7b9cdcf706,
+    type: 3}
 --- !u!1 &444638293
 GameObject:
   m_ObjectHideFlags: 0
@@ -1903,8 +1921,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4966719baa26e4b0e8231a24d9bd491a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FocusMode: 1
-  m_LightEstimationMode: 0
+  m_FocusMode: -1
+  m_LightEstimationMode: -1
   m_AutoFocus: 1
   m_LightEstimation: 0
   m_FacingDirection: 1
